@@ -22,6 +22,14 @@ export const Container = styled.div<ContainerProps>`
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
+        opacity: 0.8;
+
+        &.active {
+          font-weight: 600;
+          opacity: 1;
+          border-bottom: 2px solid #ff872c;
+          padding-bottom: 10px;
+        }
 
         & + a {
           margin-left: 32px;
