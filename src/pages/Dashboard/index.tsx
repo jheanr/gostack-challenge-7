@@ -38,6 +38,11 @@ const Dashboard: React.FC = () => {
     async function loadTransactions(): Promise<void> {
       const response = await api.get('transactions');
 
+      response.data.transactions.sort(
+        (current: Transaction, next: Transaction) =>
+          current.created_at < next.created_at ? 1 : -1,
+      );
+
       setTransactions(response.data.transactions);
       setBalance(response.data.balance);
     }
